@@ -1,0 +1,4 @@
+Day 28 Website
+responsive design - Day 34 Part 4
+26, october, 2021
+full responsive with no horijontal scroll bar

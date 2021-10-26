@@ -1,0 +1,21 @@
+First, simply go on the page that has this problem
+Navigate to the page with the Elementor horizontal scroll problem. View it from the front-end.
+
+Then, press CTRL-SHIFT-J or CMD-SHIFT-J (on Chrome) and paste the code below. 
+Then press enter.
+
+Website: https://element.how/remove-elementor-horizontal-scroll-mobile/
+
+(function (debug) {
+    var w = debug.documentElement.offsetWidth,
+        t = debug.createTreeWalker(debug.body, NodeFilter.SHOW_ELEMENT),
+        b;
+    while (t.nextNode()) {
+        b = t.currentNode.getBoundingClientRect();
+        if (b.right > w || b.left < 0) {
+            t.currentNode.style.setProperty('outline', '1px dotted red', 'important');
+            console.log(t.currentNode);
+        }
+    };
+}(document));
+
